@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "outDir": "lib",
+    "declaration": true
+  },
+  "files": [
+    "src/http.module.ts",
+    "src/http.service.ts"
+  ]
+}

@@ -13,8 +13,8 @@ export class HttpService {
     private readonly headers: Headers;
 
     private readonly getColor: string = '#07c';
-    private readonly postColor: string = '#aa0';
-    private readonly putColor: string = '#0a0';
+    private readonly postColor: string = '#0a0';
+    private readonly putColor: string = '#aa0';
     private readonly deleteColor: string = '#a00';
 
     constructor(

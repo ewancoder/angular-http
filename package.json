@@ -1,6 +1,6 @@
 {
   "name": "ewancoder-angular-http",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "description": "Angular http.",
   "license": "MIT",
   "main": "index.js",

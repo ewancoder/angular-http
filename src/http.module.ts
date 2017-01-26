@@ -8,16 +8,21 @@ import { HttpService } from './http.service';
 @NgModule({
     imports: [
         AngularHttpModule,
-        AuthModule.forRoot(),
-        LocalizationModule.forRoot(),
-        LoggerModule.forRoot(),
+        AuthModule,
+        LocalizationModule,
+        LoggerModule,
     ]
 })
 export class HttpModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: HttpModule,
-            providers: [ HttpService ]
+            providers: [
+                HttpService,
+                ...AuthModule.forRoot().providers,
+                ...LocalizationModule.forRoot().providers,
+                ...LoggerModule.forRoot().providers
+            ]
         }
     }
 }

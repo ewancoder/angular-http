@@ -1,6 +1,6 @@
 {
   "name": "ewancoder-angular-http",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "Angular http.",
   "license": "MIT",
   "main": "index.js",
@@ -22,7 +22,7 @@
     "@angular/core": "^2.4.4",
     "@angular/http": "^2.4.4",
     "rxjs": "^5.0.3",
-    "ewancoder-angular-auth": "^0.1.0-alpha.2",
+    "ewancoder-angular-auth": "^0.1.0-alpha.3",
     "ewancoder-angular-localization": "^0.1.0-alpha.4",
     "ewancoder-angular-logger": "^0.1.0-alpha.2"
   },

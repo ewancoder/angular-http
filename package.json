@@ -23,7 +23,7 @@
     "@angular/http": "^2.4.4",
     "rxjs": "^5.0.3",
     "ewancoder-angular-auth": "^0.1.0-alpha.3",
-    "ewancoder-angular-localization": "^0.1.0-alpha.4",
+    "ewancoder-angular-localization": "^0.1.0-alpha.8",
     "ewancoder-angular-logger": "^0.1.0-alpha.2"
   },
   "devDependencies": {

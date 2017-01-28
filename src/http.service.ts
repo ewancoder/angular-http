@@ -29,7 +29,7 @@ export class HttpService {
         auth.token$.subscribe(res => this.headers.set('Authorization', 'Bearer ' + res));
         locale.language$.subscribe(res => this.headers.set('Language', res));
 
-        this.logger.log('HttpService initialized.', [...this.tags, 'init']);
+        this.logger.log('Initialized HttpService.', [...this.tags, 'init']);
     }
 
     get(uri: string): Observable<any> {

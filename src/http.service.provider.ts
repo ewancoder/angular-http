@@ -21,7 +21,7 @@ export class HttpServiceFactory {
         return {
             provide: HttpService,
             useFactory: (http: Http, logger: LoggerService, router: Router, auth: AuthService, locale: LocaleService) => {
-                return new HttpService(undefined, http, logger, router, auth, locale);
+                return new HttpService(unauthorizedRedirectUri, http, logger, router, auth, locale);
             },
             deps: [ Http, LoggerService, Router, AuthService, LocaleService ]
         }

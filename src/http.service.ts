@@ -104,7 +104,10 @@ export class HttpService {
     }
 
     private handleResponse(res: Response) {
+        this.logger.log("Handling response: " + JSON.stringify(res));
+
         if (res.status === 401 && this.unauthorizedRedirectUri) {
+            this.logger.log("Redirecting to URL " + this.unauthorizedRedirectUri);
             this.router.navigate([this.unauthorizedRedirectUri]);
         }
     }

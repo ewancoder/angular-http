@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
@@ -18,8 +19,10 @@ export class HttpService {
     private readonly deleteColor: string = '#a00';
 
     constructor(
+        private readonly unauthorizedRedirectUri: string,
         private readonly http: Http,
         private readonly logger: LoggerService,
+        private readonly router: Router,
         auth: AuthService,
         locale: LocaleService) {
 
@@ -36,6 +39,7 @@ export class HttpService {
         this.logger.log(`GET ${uri}`, [...this.tags, 'get', 'req'], this.getColor);
 
         return this.http.get(uri, { headers: this.headers })
+            .do(_ => {}, (err: Response) => this.handleResponse(err))
             .map(this.map)
             .do(res => {
                 this.logger.log(`Successful GET ${uri}`, [...this.tags, 'get', 'res'], this.getColor);
@@ -48,6 +52,7 @@ export class HttpService {
         this.logger.log(`POST ${uri}`, [...this.tags, 'post', 'req'], this.postColor);
 
         return this.http.post(uri, data, { headers: this.headers })
+            .do(_ => {}, (err: Response) => this.handleResponse(err))
             .map(this.map)
             .do(res => {
                 this.logger.log(`Successful POST ${uri}`, [...this.tags, 'post', 'res'], this.postColor);
@@ -60,6 +65,7 @@ export class HttpService {
         this.logger.log(`PUT ${uri}`, [...this.tags, 'put', 'req'], this.putColor);
 
         return this.http.put(uri, data, { headers: this.headers })
+            .do(_ => {}, (err: Response) => this.handleResponse(err))
             .map(this.map)
             .do(res => {
                 this.logger.log(`Successful PUT ${uri}`, [...this.tags, 'put', 'res'], this.putColor);
@@ -72,6 +78,7 @@ export class HttpService {
         this.logger.log(`DELETE ${uri}`, [...this.tags, 'delete', 'req'], this.deleteColor);
 
         return this.http.delete(uri, { headers: this.headers })
+            .do(_ => {}, (err: Response) => this.handleResponse(err))
             .map(this.map)
             .do(res => {
                 this.logger.log(`Successful DELETE ${uri}`, [...this.tags, 'delete', 'res'], this.deleteColor);
@@ -93,6 +100,12 @@ export class HttpService {
             return json;
         } else {
             return res.text();
+        }
+    }
+
+    private handleResponse(res: Response) {
+        if (res.status === 401 && this.unauthorizedRedirectUri) {
+            this.router.navigate([this.unauthorizedRedirectUri]);
         }
     }
 }

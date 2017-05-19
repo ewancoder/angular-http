@@ -19,7 +19,7 @@ export let httpServiceProvider: FactoryProvider = {
 export class HttpServiceFactory {
     static withUnauthorizedRedirectUri(unauthorizedRedirectUri: string): FactoryProvider {
         return {
-            provide: LocaleService,
+            provide: HttpService,
             useFactory: (http: Http, logger: LoggerService, router: Router, auth: AuthService, locale: LocaleService) => {
                 return new HttpService(undefined, http, logger, router, auth, locale);
             },

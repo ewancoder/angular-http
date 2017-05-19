@@ -15,6 +15,7 @@
   },
   "files": [
     "src/http.module.ts",
-    "src/http.service.ts"
+    "src/http.service.ts",
+    "src/http.service.provider.ts"
   ]
 }

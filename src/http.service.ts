@@ -3,9 +3,9 @@ import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
-import { AuthService } from 'ewancoder-angular-auth';
-import { LocaleService } from 'ewancoder-angular-localization';
-import { LoggerService } from 'ewancoder-angular-logger';
+import { AuthService } from '@ewancoder/angular-auth';
+import { LocaleService } from '@ewancoder/angular-localization';
+import { LoggerService } from '@ewancoder/angular-logger';
 
 @Injectable()
 export class HttpService {

@@ -35,6 +35,16 @@ export class HttpService {
         this.logger.log('Initialized HttpService.', [...this.tags, 'init']);
     }
 
+    popUnauthorizedUri() : string | undefined {
+        let uri = localStorage.getItem('ewancoder-angular-http-unauthorizedUri');
+        if (uri) {
+            localStorage.removeItem('ewancoder-angular-http-unauthorizedUri');
+            return uri;
+        } else {
+            return undefined;
+        }
+    }
+
     get(uri: string): Observable<any> {
         this.logger.log(`GET ${uri}`, [...this.tags, 'get', 'req'], this.getColor);
 
@@ -104,10 +114,10 @@ export class HttpService {
     }
 
     private handleResponse(res: Response) {
-        this.logger.log("Handling response: " + JSON.stringify(res));
-
         if (res.status === 401 && this.unauthorizedRedirectUri) {
-            this.logger.log("Redirecting to URL " + this.unauthorizedRedirectUri);
+            localStorage.setItem('ewancoder-angular-http-unauthorizedUri', this.unauthorizedRedirectUri);
+            
+            this.logger.log("Unauthorized. Redirecting to URL " + this.unauthorizedRedirectUri);
             this.router.navigate([this.unauthorizedRedirectUri]);
         }
     }

@@ -1,6 +1,6 @@
 {
   "name": "@ewancoder/angular-http",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Angular http.",
   "license": "MIT",
   "main": "i4dex.js",
@@ -25,12 +25,12 @@
     "@ewancoder/angular-auth": "~0.5.0",
     "@ewancoder/angular-localization": "~0.5.0",
     "@ewancoder/angular-logger": "~0.5.1",
-    "zone.js": "~0.8.10",
+    "zone.js": "~0.8.11",
     "@angular/platform-browser": "~4.1.3",
     "@angular/common": "~4.1.3",
     "@angular/router": "~4.1.3"
   },
   "devDependencies": {
-    "typescript": "~2.3.2"
+    "typescript": "~2.3.3"
   }
 }

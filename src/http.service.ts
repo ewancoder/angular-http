@@ -115,7 +115,7 @@ export class HttpService {
 
     private handleResponse(res: Response) {
         if (res.status === 401 && this.unauthorizedRedirectUri) {
-            localStorage.setItem('ewancoder-angular-http-unauthorizedUri', this.unauthorizedRedirectUri);
+            localStorage.setItem('ewancoder-angular-http-unauthorizedUri', this.router.url);
             
             this.logger.log("Unauthorized. Redirecting to URL " + this.unauthorizedRedirectUri);
             this.router.navigate([this.unauthorizedRedirectUri]);

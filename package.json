@@ -1,6 +1,6 @@
 {
   "name": "@ewancoder/angular-http",
-  "version": "0.6.7",
+  "version": "0.7.0",
   "description": "Angular http.",
   "license": "MIT",
   "main": "i4dex.js",
@@ -12,25 +12,28 @@
     "type": "git",
     "url": "git+https://github.com/ewancoder/angular-http"
   },
-  "keywords": ["Angular", "Http"],
+  "keywords": [
+    "Angular",
+    "Http"
+  ],
   "author": "ewancoder@gmail.com",
   "bugs": {
     "url": "https://github.com/ewancoder/angular-http"
   },
   "homepage": "https://github.com/ewancoder/angular-http#readme",
   "dependencies": {
-    "@angular/core": "~4.1.3",
-    "@angular/http": "~4.1.3",
-    "rxjs": "~5.4.0",
-    "@ewancoder/angular-auth": "~0.5.0",
-    "@ewancoder/angular-localization": "~0.5.0",
-    "@ewancoder/angular-logger": "~0.5.1",
-    "zone.js": "~0.8.11",
-    "@angular/platform-browser": "~4.1.3",
-    "@angular/common": "~4.1.3",
-    "@angular/router": "~4.1.3"
+    "@angular/core": "~4.2.3",
+    "@angular/http": "~4.2.3",
+    "rxjs": "~5.4.1",
+    "@ewancoder/angular-auth": "~0.7.0",
+    "@ewancoder/angular-localization": "~0.7.0",
+    "@ewancoder/angular-logger": "~0.7.0",
+    "zone.js": "~0.8.12",
+    "@angular/platform-browser": "~4.2.3",
+    "@angular/common": "~4.2.3",
+    "@angular/router": "~4.2.3"
   },
   "devDependencies": {
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.4"
   }
 }

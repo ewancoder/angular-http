@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, RequestOptionsArgs } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
@@ -45,7 +45,7 @@ export class HttpService {
         }
     }
 
-    get(uri: string, search?: RequestOptionsArgs): Observable<any> {
+    get(uri: string, search?: string|URLSearchParams|{[key: string]: any | any[]}|null): Observable<any> {
         this.logger.log(`GET ${uri}`, [...this.tags, 'get', 'req'], this.getColor);
 
         return this.http.get(uri, { headers: this.headers, search: search })
